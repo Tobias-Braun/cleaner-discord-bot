@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <title>CleanSlotBot Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style..css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+</head>
+<body>
+    {% if config %}
+<form method="post" class="pure-form pure-form-aligned">
+    <div>
+        <input type="text" name="cleanToken" value={{ config["cleanToken"]}} />
+        <label for="cleanToken">Token bei dem gelöscht werden soll</label>
+    </div>
+    <div>
+        <input type="text" name="channelsToClean" value={{ config["channelsToClean"]}} />
+        <label for="channelsToClean">Kanäle, bei denen gelöscht werden soll</label>
+    </div>
+    <div>
+        <input type="text" name="botChannelsToClean" value={{ config["botChannelsToClean"]}} />
+        <label for="botChannelsToClean">Kanäle, bei denen nach einem Delay gelöscht werden soll</label>
+    </div>
+    <div>
+        <input type="number" name="botChannelCleaningDelay" value={{ config["botChannelCleaningDelay"]}} />
+        <label for="botChannelCleaningDelay">Delay in Sekunden, nach denen in Bot channels gelöscht wird</label>
+    </div>
+    <input type="submit" value="Update" />
+</form>
+<form class="pure-form">
+    <fieldset>
+        <legend>A compact inline form</legend>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
+        <label for="default-remember">
+            <input type="checkbox" id="default-remember" /> Remember me</label>
+        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+    </fieldset>
+</form>
+{% else %}
+<h1>Hello, World!</h1>
+{% endif %}
+</body>
+</html>

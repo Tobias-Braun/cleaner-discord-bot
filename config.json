@@ -1,0 +1,1 @@
+{"cleanToken": "[\\!\\?]", "channelsToClean": "['\ud83d\udcb0-market']", "botChannelsToClean": "['\ud83d\udc7e-bot-channel']", "botChannelCleaningDelay": "3"}
