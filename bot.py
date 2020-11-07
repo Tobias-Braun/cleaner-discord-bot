@@ -3,14 +3,16 @@ import discord
 import asyncio
 import json
 import re
+import os
 
 
-TOKEN = "Nzc0MzA0NDQyMTUzMTczMDkz.X6V1NA.EGl6Pg3o12O6XV04NWk0RyfBF2U"
+TOKEN = os.environ["DISCORD_CLEANER_BOT_TOKEN"]
 
 client = discord.Client()
 
 channels_to_clean = ["general", "lululul😀"]
 bot_channels_to_clean = ["bot_usage"]
+
 
 @client.event
 async def on_ready():
@@ -20,12 +22,10 @@ async def on_ready():
 @client.event
 async def on_message(message):
 
-
     data = {}
 
     with open('config.json') as f:
         data = json.load(f)
-
 
     cleanToken = data["cleanToken"]
     channels_to_clean = data["channelsToClean"]
